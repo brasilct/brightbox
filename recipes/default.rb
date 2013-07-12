@@ -5,7 +5,8 @@
 # Copyright 2013, Bubble
 # Based on https://github.com/filtersquad/chef-brightbox
 #
-# The MIT License (MIT) 
+# The MIT License (MIT)
+include_recipe "apt"
 
 apt_repository "brightbox-ruby-ng-#{node['lsb']['codename']}" do
   uri          "http://ppa.launchpad.net/brightbox/ruby-ng/ubuntu"

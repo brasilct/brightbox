@@ -27,3 +27,5 @@ end
 
 package node["brightbox"]["version"]
 package "#{node["brightbox"]["version"]}-dev"
+
+gem_package "bundler"

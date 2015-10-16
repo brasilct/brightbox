@@ -28,4 +28,22 @@ end
 package node["brightbox"]["version"]
 package "#{node["brightbox"]["version"]}-dev"
 
-gem_package "bundler"
+packages = ["build-essential", "ruby#{node['brightbox']['version']}"]
+packages << "ruby#{node['brightbox']['version']}-dev"
+packages << "ruby-switch"
+packages.each do |name|
+  apt_package name do
+    action :install
+  end
+end
+
+node['brightbox']['gems'].each do |gem|
+  gem_package gem do
+    action :install
+  end
+end
+
+execute "gem regenerate_binstubs" do
+  action :nothing
+  subscribes :run, resources('gem_package[rubygems-bundler]')
+end

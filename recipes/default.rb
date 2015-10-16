@@ -25,9 +25,6 @@ cookbook_file "/etc/gemrc" do
   mode   "0644"
 end
 
-package node["brightbox"]["version"]
-package "#{node["brightbox"]["version"]}-dev"
-
 packages = ["build-essential", "ruby#{node['brightbox']['version']}"]
 packages << "ruby#{node['brightbox']['version']}-dev"
 packages << "ruby-switch"

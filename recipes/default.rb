@@ -42,7 +42,7 @@ node['brightbox']['gems'].each do |gem|
   end
 end
 
-# execute "gem regenerate_binstubs" do
-#   action :nothing
-#   subscribes :run, resources('gem_package[rubygems-bundler]')
-# end
+execute "gem regenerate_binstubs" do
+  action :nothing
+  subscribes :run, resources('gem_package[rubygems-bundler]')
+end

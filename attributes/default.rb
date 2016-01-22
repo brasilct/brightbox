@@ -1,2 +1,2 @@
-default['brightbox']['version'] = '2.2'
+default['brightbox']['version'] = '2.3'
 default['brightbox']['gems'] = ["bundler", "rake"]

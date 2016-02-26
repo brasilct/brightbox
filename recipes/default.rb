@@ -26,6 +26,9 @@ cookbook_file "/etc/gemrc" do
 end
 
 packages = ["build-essential", "ruby#{node['brightbox']['version']}"]
+packages << "nodejs"
+packages << "libmysqld-dev"
+packages << "libmysqlclient-dev"
 packages << "ruby#{node['brightbox']['version']}-dev"
 packages << "ruby-switch"
 packages.each do |name|

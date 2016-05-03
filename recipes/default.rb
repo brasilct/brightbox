@@ -37,6 +37,13 @@ packages.each do |name|
   end
 end
 
+gem_package "bundler" do
+  gem_binary "/usr/bin/gem"
+  options "--force"
+  version "1.11"
+  action :install
+end
+
 node['brightbox']['gems'].each do |gem|
   gem_package gem do
     gem_binary "/usr/bin/gem"

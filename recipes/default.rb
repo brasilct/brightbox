@@ -39,8 +39,8 @@ end
 
 gem_package "bundler" do
   gem_binary "/usr/bin/gem"
-  options "--force"
-  version "1.11"
+  # options "--force"
+  # version "1.11"
   action :install
 end
 
